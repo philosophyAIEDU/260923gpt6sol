@@ -1,3 +1,5 @@
+import { ADDITIONAL_ILLUSTRATIONS } from './generatedMedia';
+
 /** NASA 사진은 원본 설명 페이지를 함께 제공해 관측 영상과 3D 모형을 구분합니다. */
 export interface SpacePhoto {
   id: string;
@@ -6,6 +8,7 @@ export interface SpacePhoto {
   observation: string;
   image: string;
   source: string;
+  reference?: string;
   credit: string;
   focusId?: string;
   learningPoint?: string;
@@ -117,14 +120,15 @@ export const CONCEPT_ILLUSTRATIONS: SpacePhoto[] = [
     id: 'day-night-concept', focusId: 'earth', kind: 'illustration', title: '지구의 낮과 밤', subtitle: '학습용 생성 일러스트 · 실제 촬영 사진 아님',
     observation: '햇빛을 받는 쪽과 어두운 쪽의 경계를 찾아보세요. 지구가 자전하면 경계가 어떻게 달라질까요?',
     learningPoint: '낮과 밤은 지구가 자전하면서 각 지역이 태양빛을 받거나 받지 않기 때문에 생깁니다. 표현은 개념 이해를 위한 것입니다.',
-    image: '/images/illustrations/earth-day-night.jpg', source: '', credit: 'OpenAI ImageGen · 교육용 개념 일러스트',
+    image: '/images/illustrations/earth-day-night.jpg', source: '', reference: 'https://science.nasa.gov/earth/facts/', credit: 'OpenAI ImageGen · 교육용 개념 일러스트',
   },
   {
     id: 'planet-types-concept', focusId: 'jupiter', kind: 'illustration', title: '암석 행성과 가스 행성', subtitle: '학습용 생성 일러스트 · 실제 크기 비율 아님',
     observation: '왼쪽 천체의 충돌 구덩이와 오른쪽 천체의 구름 띠를 비교해 보세요.',
     learningPoint: '암석 행성에는 단단한 표면이 있고, 목성과 같은 거대 가스 행성에서 보이는 무늬는 대기의 구름입니다. 두 천체는 실제 비율로 그리지 않았습니다.',
-    image: '/images/illustrations/rocky-gas-planets.jpg', source: '', credit: 'OpenAI ImageGen · 교육용 개념 일러스트',
+    image: '/images/illustrations/rocky-gas-planets.jpg', source: '', reference: 'https://science.nasa.gov/solar-system/solar-system-facts/', credit: 'OpenAI ImageGen · 교육용 개념 일러스트',
   },
+  ...ADDITIONAL_ILLUSTRATIONS,
 ];
 
 export const getSpacePhoto = (id: string): SpacePhoto | undefined => SPACE_PHOTOS.find((photo) => photo.id === id);

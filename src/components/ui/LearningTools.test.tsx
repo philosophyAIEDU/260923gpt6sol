@@ -41,4 +41,14 @@ describe('학생용 탐사 도구', () => {
     expect(screen.queryByRole('dialog', { name: /확대 사진/ })).not.toBeInTheDocument();
     await waitFor(() => expect(screen.getByRole('button', { name: '수성의 지형 사진 크게 보기' })).toHaveFocus());
   });
+
+  it('생성형 AI 그림은 관측 사진과 별도 탭에 표시하고 근거 자료를 제공한다', async () => {
+    const user = userEvent.setup();
+    render(<PhotoGallery onClose={vi.fn()} />);
+    expect(screen.queryByRole('button', { name: '수성의 충돌 구덩이 생성 그림 크게 보기' })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: '생성형 AI로 그린 그림 22' }));
+    expect(screen.getAllByRole('link', { name: 'NASA 학습 자료 ↗' })).toHaveLength(22);
+    await user.click(screen.getByRole('button', { name: '수성의 충돌 구덩이 생성 그림 크게 보기' }));
+    expect(screen.getByRole('dialog', { name: '수성의 충돌 구덩이 확대 사진' })).toHaveTextContent('생성형 AI로 그린 그림');
+  });
 });
