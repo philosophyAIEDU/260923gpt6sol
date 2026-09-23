@@ -81,7 +81,7 @@ export function SpeedSlider({ value, onChange }: SpeedSliderProps): JSX.Element 
         <div className="absolute inset-x-0 h-[3px] rounded-full bg-white/[0.08]" />
         {/* 채워진 구간 */}
         <motion.div
-          className="absolute left-0 h-[3px] rounded-full bg-gradient-to-r from-accent-violet to-accent-cyan shadow-[0_0_12px_rgba(77,216,255,0.6)]"
+          className="absolute left-0 h-[3px] rounded-full bg-gradient-to-r from-accent-violet to-accent-cyan shadow-[0_0_12px_rgba(140,217,209,0.6)]"
           initial={false}
           animate={{ width: `${pct}%` }}
           transition={{ duration: m.base / 1000, ease: m.easeOut }}
@@ -101,7 +101,7 @@ export function SpeedSlider({ value, onChange }: SpeedSliderProps): JSX.Element 
         {/* 썸 */}
         <motion.span
           aria-hidden
-          className="absolute h-4 w-4 -translate-x-1/2 rounded-full border border-white/70 bg-ink-primary shadow-[0_0_0_4px_rgba(77,216,255,0.18),0_0_18px_rgba(77,216,255,0.75)] transition-shadow duration-220 group-hover:shadow-[0_0_0_6px_rgba(77,216,255,0.22),0_0_22px_rgba(77,216,255,0.9)] group-focus-visible:shadow-[0_0_0_6px_rgba(77,216,255,0.4),0_0_22px_rgba(77,216,255,0.9)]"
+          className="absolute h-4 w-4 -translate-x-1/2 rounded-full border border-white/70 bg-ink-primary shadow-[0_0_0_4px_rgba(140,217,209,0.18),0_0_18px_rgba(140,217,209,0.75)] transition-shadow duration-220 group-hover:shadow-[0_0_0_6px_rgba(140,217,209,0.22),0_0_22px_rgba(140,217,209,0.9)] group-focus-visible:shadow-[0_0_0_6px_rgba(140,217,209,0.4),0_0_22px_rgba(140,217,209,0.9)]"
           initial={false}
           animate={{ left: `${pct}%` }}
           transition={{ duration: m.base / 1000, ease: m.easeOut }}

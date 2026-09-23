@@ -72,7 +72,7 @@ function SizeComparison({ body }: { body: CelestialBody }): JSX.Element {
       <div className="relative mt-2.5 h-1.5 rounded-full bg-white/[0.06]">
         <motion.div
           className="absolute inset-y-0 left-0 rounded-full"
-          style={{ background: `linear-gradient(90deg, rgba(124,92,255,0.6), ${body.color})` }}
+          style={{ background: `linear-gradient(90deg, rgba(211,174,117,0.6), ${body.color})` }}
           initial={{ width: 0 }}
           animate={{ width: `${Math.max(3, Math.min(100, t * 100))}%` }}
           transition={{ duration: 0.6, delay: 0.1, ease: m.easeOut }}
@@ -156,7 +156,7 @@ function PanelContent({ body }: { body: CelestialBody }): JSX.Element {
       )}
 
       {photo && (
-        <figure className="overflow-hidden rounded-xl border border-white/10 bg-[#11152a]">
+        <figure className="overflow-hidden rounded-xl border border-white/10 bg-[#0d222d]">
           <img className="aspect-[16/9] w-full object-cover" loading="lazy" src={photo.image} alt={`${photo.title} — ${photo.subtitle}`} />
           <figcaption className="p-3 text-xs leading-relaxed text-ink-secondary">
             <span className="font-semibold text-ink-primary">NASA 실제 관측 사진</span> · {photo.subtitle}<br />

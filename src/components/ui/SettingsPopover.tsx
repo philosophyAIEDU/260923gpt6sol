@@ -48,7 +48,7 @@ function ToggleRow({ label, checked, onChange, icon }: ToggleRowProps): JSX.Elem
         <motion.span
           className={[
             'absolute top-[2px] h-3.5 w-3.5 rounded-full',
-            checked ? 'bg-accent-cyan shadow-[0_0_10px_rgba(77,216,255,0.9)]' : 'bg-ink-muted',
+            checked ? 'bg-accent-cyan shadow-[0_0_10px_rgba(140,217,209,0.9)]' : 'bg-ink-muted',
           ].join(' ')}
           animate={{ left: checked ? 18 : 2 }}
           transition={{ duration: m.base / 1000, ease: m.easeOut }}

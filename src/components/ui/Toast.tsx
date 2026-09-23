@@ -4,7 +4,7 @@ import { useAppStore } from '../../store/useAppStore';
 import { motion as m } from '../../styles/tokens';
 
 const TONE_DOT: Record<string, string> = {
-  info: 'bg-accent-cyan shadow-[0_0_10px_rgba(77,216,255,0.9)]',
+  info: 'bg-accent-cyan shadow-[0_0_10px_rgba(140,217,209,0.9)]',
   success: 'bg-accent-success shadow-[0_0_10px_rgba(92,242,176,0.9)]',
   warning: 'bg-accent-warning shadow-[0_0_10px_rgba(255,200,107,0.9)]',
 };

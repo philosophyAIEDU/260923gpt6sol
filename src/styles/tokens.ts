@@ -5,33 +5,33 @@
  */
 export const colors = {
   space: {
-    950: '#030309',
-    900: '#050510',
-    800: '#0a0a1f',
-    700: '#11112b',
-    600: '#1a1a3a',
+    950: '#030b11',
+    900: '#07131c',
+    800: '#0c1d29',
+    700: '#132b38',
+    600: '#1c3845',
   },
   accent: {
-    cyan: '#4dd8ff',
-    violet: '#7c5cff',
-    magenta: '#c86bff',
-    success: '#5cf2b0',
-    danger: '#ff6b8b',
-    warning: '#ffc86b',
+    cyan: '#8cd9d1',
+    violet: '#d3ae75',
+    magenta: '#a9bdc6',
+    success: '#82d8b0',
+    danger: '#ee9292',
+    warning: '#e8bf76',
   },
   ink: {
     // 순수 흰색 대신 푸른 기가 도는 오프화이트를 사용해 우주 배경과 자연스럽게 어울리게 합니다.
-    primary: '#e6e9f5',
-    secondary: '#b4bbd6',
-    muted: '#7d86a8',
-    faint: '#4c5373',
+    primary: '#f2f4f0',
+    secondary: '#c4d2d2',
+    muted: '#96aeb2',
+    faint: '#708991',
   },
   glass: {
-    bg: 'rgba(15, 15, 35, 0.6)',
-    bgStrong: 'rgba(15, 15, 35, 0.78)',
-    border: 'rgba(255, 255, 255, 0.1)',
-    borderStrong: 'rgba(255, 255, 255, 0.18)',
-    highlight: 'rgba(255, 255, 255, 0.04)',
+    bg: 'rgba(9, 29, 39, 0.88)',
+    bgStrong: 'rgba(8, 26, 36, 0.97)',
+    border: 'rgba(197, 222, 218, 0.16)',
+    borderStrong: 'rgba(197, 222, 218, 0.26)',
+    highlight: 'rgba(197, 222, 218, 0.05)',
   },
 } as const;
 

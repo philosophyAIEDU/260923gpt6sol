@@ -35,7 +35,7 @@ export function TopControls({ onTour, onGallery, onTeacher, onCompare, onQuizTog
         <SegmentedControl options={SCALE_OPTIONS} value={scaleMode} onChange={setScaleMode} ariaLabel="비율 모드" />
       </div>
       {onTour && <button type="button" onClick={onTour} aria-pressed={tourOpen} className="glass rounded-full px-3 py-2.5 text-xs font-medium text-accent-cyan hover:bg-white/10">▶ 3D 탐사</button>}
-      {onGallery && <button type="button" onClick={onGallery} aria-pressed={galleryOpen} className="glass rounded-full px-3 py-2.5 text-xs font-medium text-ink-primary hover:bg-white/10">NASA 사진</button>}
+      {onGallery && <button type="button" onClick={onGallery} aria-pressed={galleryOpen} className="glass rounded-full px-3 py-2.5 text-xs font-medium text-ink-primary hover:bg-white/10">사진 아틀라스</button>}
       {onCompare && <button type="button" onClick={onCompare} aria-pressed={compareOpen} className="glass rounded-full px-3 py-2.5 text-xs font-medium text-ink-primary hover:bg-white/10">행성 비교</button>}
       {onTeacher && <button type="button" onClick={onTeacher} aria-pressed={teacherOpen} className="glass rounded-full px-3 py-2.5 text-xs font-medium text-accent-cyan hover:bg-white/10">✦ AI 선생님</button>}
       <button
@@ -47,7 +47,7 @@ export function TopControls({ onTour, onGallery, onTeacher, onCompare, onQuizTog
           'transition-all duration-220 ease-out-quint',
           quizOpen
             ? 'glass text-accent-cyan shadow-glow'
-            : 'bg-gradient-to-r from-accent-violet to-[#5b8cff] text-ink-primary shadow-[0_8px_30px_-8px_rgba(124,92,255,0.8)] hover:shadow-[0_8px_36px_-6px_rgba(124,92,255,1)]',
+            : 'border border-accent-violet/60 bg-accent-violet text-space-950 shadow-[0_8px_24px_-12px_rgba(211,174,117,0.8)] hover:bg-[#e2c496]',
         ].join(' ')}
       >
         <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />

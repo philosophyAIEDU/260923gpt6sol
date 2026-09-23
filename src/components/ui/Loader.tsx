@@ -4,7 +4,7 @@ import { motion as m } from '../../styles/tokens';
 
 const ORBITS = [
   { r: 34, dur: 3.2, size: 3.2, color: '#b3aa9f', delay: 0 },
-  { r: 52, dur: 5.4, size: 4.2, color: '#4dd8ff', delay: 0.15 },
+  { r: 52, dur: 5.4, size: 4.2, color: '#8cd9d1', delay: 0.15 },
   { r: 72, dur: 8.6, size: 3.6, color: '#d0643a', delay: 0.3 },
   { r: 96, dur: 13, size: 6, color: '#d8b48a', delay: 0.45 },
 ] as const;
@@ -30,7 +30,7 @@ export function Loader(): JSX.Element {
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-space-900"
       style={{
         background:
-          'radial-gradient(700px 500px at 50% 42%, rgba(124,92,255,0.12), transparent 70%), linear-gradient(180deg,#050510,#0a0a1f)',
+          'radial-gradient(700px 500px at 50% 42%, rgba(211,174,117,0.12), transparent 70%), linear-gradient(180deg,#030b11,#0c1d29)',
       }}
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, scale: 1.04, filter: 'blur(6px)' }}
@@ -48,8 +48,8 @@ export function Loader(): JSX.Element {
               <stop offset="100%" stopColor="#ff7a1a" stopOpacity="0" />
             </radialGradient>
             <linearGradient id="loader-orbit" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stopColor="#4dd8ff" stopOpacity="0.55" />
-              <stop offset="100%" stopColor="#7c5cff" stopOpacity="0.2" />
+              <stop offset="0%" stopColor="#8cd9d1" stopOpacity="0.55" />
+              <stop offset="100%" stopColor="#d3ae75" stopOpacity="0.2" />
             </linearGradient>
           </defs>
           <g transform="rotate(-12)">
@@ -95,7 +95,7 @@ export function Loader(): JSX.Element {
         <h1 className="mt-2 font-display text-2xl font-semibold tracking-tight text-gradient">태양계로 떠나는 중</h1>
         <div className="mt-6 h-[2px] w-56 overflow-hidden rounded-full bg-white/[0.06]">
           <motion.div
-            className="h-full rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet shadow-[0_0_12px_rgba(77,216,255,0.8)]"
+            className="h-full rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet shadow-[0_0_12px_rgba(140,217,209,0.8)]"
             initial={{ width: '0%' }}
             animate={{ width: `${Math.max(3, pct)}%` }}
             transition={{ duration: 0.3, ease: m.easeOut }}

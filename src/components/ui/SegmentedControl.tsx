@@ -55,7 +55,7 @@ export function SegmentedControl<T extends string>({
             {active && (
               <motion.span
                 layoutId={`seg-${id}`}
-                className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-accent-cyan to-[#a4ecff] shadow-[0_0_18px_-4px_rgba(77,216,255,0.8)]"
+                className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-accent-cyan to-[#a4ecff] shadow-[0_0_18px_-4px_rgba(140,217,209,0.8)]"
                 transition={{ duration: motionTokens.slow / 1000, ease: motionTokens.easeOut }}
               />
             )}

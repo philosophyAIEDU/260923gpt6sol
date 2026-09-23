@@ -44,7 +44,7 @@ export function PlanetNav(): JSX.Element {
                     className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-accent-cyan/[0.14] to-transparent md:rounded-lg"
                     transition={{ duration: m.base / 1000, ease: m.easeOut }}
                   >
-                    <span className="absolute left-0 top-1/2 hidden h-4 w-[2px] -translate-y-1/2 rounded-full bg-accent-cyan shadow-[0_0_10px_rgba(77,216,255,0.9)] md:block" />
+                    <span className="absolute left-0 top-1/2 hidden h-4 w-[2px] -translate-y-1/2 rounded-full bg-accent-cyan shadow-[0_0_10px_rgba(140,217,209,0.9)] md:block" />
                   </motion.span>
                 )}
                 <span

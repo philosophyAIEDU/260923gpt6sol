@@ -42,7 +42,7 @@ export function CompareLab({ onClose }: { onClose: () => void }): JSX.Element {
             {([['left', left], ['right', right]] as const).map(([side, body]) => (
               <div key={side} className="rounded-2xl border border-white/10 bg-white/[0.04] p-3">
                 <label htmlFor={`compare-${side}`} className="eyebrow">{side === 'left' ? '행성 A' : '행성 B'}</label>
-                <select id={`compare-${side}`} value={body.id} onChange={(event) => change(side, event.target.value)} className="mt-2 w-full rounded-lg border border-white/15 bg-[#15192f] px-2 py-2 text-sm text-ink-primary">{PLANETS.map((planet) => <option key={planet.id} value={planet.id}>{planet.name}</option>)}</select>
+                <select id={`compare-${side}`} value={body.id} onChange={(event) => change(side, event.target.value)} className="mt-2 w-full rounded-lg border border-white/15 bg-[#122c38] px-2 py-2 text-sm text-ink-primary">{PLANETS.map((planet) => <option key={planet.id} value={planet.id}>{planet.name}</option>)}</select>
                 <button type="button" onClick={() => { select(body.id); onClose(); }} className="mt-2 text-xs text-accent-cyan underline underline-offset-4">3D에서 {body.name} 보기</button>
               </div>
             ))}

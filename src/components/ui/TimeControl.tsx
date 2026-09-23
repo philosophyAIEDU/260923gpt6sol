@@ -28,7 +28,7 @@ export function TimeControl(): JSX.Element {
         className={[
           'flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-all duration-220 ease-out-quint',
           paused
-            ? 'bg-accent-cyan text-space-900 shadow-[0_0_24px_-2px_rgba(77,216,255,0.8)] hover:scale-105'
+            ? 'bg-accent-cyan text-space-900 shadow-[0_0_24px_-2px_rgba(140,217,209,0.8)] hover:scale-105'
             : 'bg-white/[0.06] text-ink-primary hover:bg-white/[0.1]',
         ].join(' ')}
       >

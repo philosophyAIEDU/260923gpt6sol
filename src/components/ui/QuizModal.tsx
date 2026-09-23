@@ -17,8 +17,8 @@ function ScoreRing({ score, total }: { score: number; total: number }): JSX.Elem
       <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90" aria-hidden>
         <defs>
           <linearGradient id="score-grad" x1="0" x2="1">
-            <stop offset="0%" stopColor="#7c5cff" />
-            <stop offset="100%" stopColor="#4dd8ff" />
+            <stop offset="0%" stopColor="#d3ae75" />
+            <stop offset="100%" stopColor="#8cd9d1" />
           </linearGradient>
         </defs>
         <circle cx="60" cy="60" r={r} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="6" />
@@ -34,7 +34,7 @@ function ScoreRing({ score, total }: { score: number; total: number }): JSX.Elem
           initial={{ strokeDashoffset: c }}
           animate={{ strokeDashoffset: c * (1 - ratio) }}
           transition={{ duration: 1.1, ease: m.easeOut, delay: 0.15 }}
-          style={{ filter: 'drop-shadow(0 0 8px rgba(77,216,255,0.6))' }}
+          style={{ filter: 'drop-shadow(0 0 8px rgba(140,217,209,0.6))' }}
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -128,7 +128,7 @@ export function QuizModal(): JSX.Element {
                   <button
                     type="button"
                     onClick={() => openQuiz()}
-                    className="rounded-full bg-gradient-to-r from-accent-violet to-accent-cyan px-5 py-2.5 font-display text-xs font-semibold text-space-900 shadow-[0_8px_30px_-8px_rgba(77,216,255,0.8)] transition-transform duration-220 hover:scale-[1.03]"
+                    className="rounded-full bg-gradient-to-r from-accent-violet to-accent-cyan px-5 py-2.5 font-display text-xs font-semibold text-space-900 shadow-[0_8px_30px_-8px_rgba(140,217,209,0.8)] transition-transform duration-220 hover:scale-[1.03]"
                   >
                     다시 도전
                   </button>
@@ -238,7 +238,7 @@ export function QuizModal(): JSX.Element {
                       <button
                         type="button"
                         onClick={nextQuestion}
-                        className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-accent-violet to-accent-cyan py-3 font-display text-sm font-semibold text-space-900 shadow-[0_8px_30px_-10px_rgba(77,216,255,0.9)] transition-transform duration-220 hover:scale-[1.015]"
+                        className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-accent-violet to-accent-cyan py-3 font-display text-sm font-semibold text-space-900 shadow-[0_8px_30px_-10px_rgba(140,217,209,0.9)] transition-transform duration-220 hover:scale-[1.015]"
                       >
                         {quiz.index >= total - 1 ? '결과 보기' : '다음 문제'}
                         <ArrowRightIcon size={16} />
