@@ -10,7 +10,19 @@ const SCALE_OPTIONS: ReadonlyArray<SegmentOption<ScaleMode>> = [
 ];
 
 /** 우상단 컨트롤: 비율 모드 세그먼트 + 퀴즈 + 설정 */
-export function TopControls({ onTour, onGallery, tourOpen = false, galleryOpen = false }: { onTour?: () => void; onGallery?: () => void; tourOpen?: boolean; galleryOpen?: boolean } = {}): JSX.Element {
+interface TopControlsProps {
+  onTour?: () => void;
+  onGallery?: () => void;
+  onTeacher?: () => void;
+  onCompare?: () => void;
+  onQuizToggle?: () => void;
+  tourOpen?: boolean;
+  galleryOpen?: boolean;
+  teacherOpen?: boolean;
+  compareOpen?: boolean;
+}
+
+export function TopControls({ onTour, onGallery, onTeacher, onCompare, onQuizToggle, tourOpen = false, galleryOpen = false, teacherOpen = false, compareOpen = false }: TopControlsProps = {}): JSX.Element {
   const scaleMode = useAppStore((s) => s.scaleMode);
   const setScaleMode = useAppStore((s) => s.setScaleMode);
   const quizOpen = useAppStore((s) => s.quiz.open);
@@ -24,9 +36,11 @@ export function TopControls({ onTour, onGallery, tourOpen = false, galleryOpen =
       </div>
       {onTour && <button type="button" onClick={onTour} aria-pressed={tourOpen} className="glass rounded-full px-3 py-2.5 text-xs font-medium text-accent-cyan hover:bg-white/10">▶ 3D 탐사</button>}
       {onGallery && <button type="button" onClick={onGallery} aria-pressed={galleryOpen} className="glass rounded-full px-3 py-2.5 text-xs font-medium text-ink-primary hover:bg-white/10">NASA 사진</button>}
+      {onCompare && <button type="button" onClick={onCompare} aria-pressed={compareOpen} className="glass rounded-full px-3 py-2.5 text-xs font-medium text-ink-primary hover:bg-white/10">행성 비교</button>}
+      {onTeacher && <button type="button" onClick={onTeacher} aria-pressed={teacherOpen} className="glass rounded-full px-3 py-2.5 text-xs font-medium text-accent-cyan hover:bg-white/10">✦ AI 선생님</button>}
       <button
         type="button"
-        onClick={() => (quizOpen ? closeQuiz() : openQuiz())}
+        onClick={() => onQuizToggle ? onQuizToggle() : (quizOpen ? closeQuiz() : openQuiz())}
         aria-pressed={quizOpen}
         className={[
           'group relative flex h-10 items-center gap-2 overflow-hidden rounded-full px-3 font-display sm:px-4 text-xs font-medium tracking-wide',

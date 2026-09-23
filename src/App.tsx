@@ -5,6 +5,8 @@ import * as THREE from 'three';
 import { SceneReadySignal } from './components/scene/SceneReadySignal';
 import { SolarScene } from './components/scene/SolarScene';
 import { Header } from './components/ui/Header';
+import { AstronomyTeacher } from './components/ui/AstronomyTeacher';
+import { CompareLab } from './components/ui/CompareLab';
 import { GuidedTour } from './components/ui/GuidedTour';
 import { InfoPanel } from './components/ui/InfoPanel';
 import { InteractionHint } from './components/ui/InteractionHint';
@@ -26,6 +28,8 @@ import { QUALITY_PROFILES } from './utils/quality';
 export default function App(): JSX.Element {
   const [tourOpen, setTourOpen] = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
+  const [teacherOpen, setTeacherOpen] = useState(false);
+  const [compareOpen, setCompareOpen] = useState(false);
   useTexturePreload();
   useKeyboardShortcuts();
   useHoverCursor();
@@ -41,13 +45,13 @@ export default function App(): JSX.Element {
   const profile = QUALITY_PROFILES[quality];
 
   useEffect(() => {
-    if (!tourOpen && !galleryOpen) return;
+    if (!tourOpen && !galleryOpen && !teacherOpen && !compareOpen) return;
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') { setTourOpen(false); setGalleryOpen(false); }
+      if (event.key === 'Escape') { setTourOpen(false); setGalleryOpen(false); setTeacherOpen(false); setCompareOpen(false); }
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [tourOpen, galleryOpen]);
+  }, [tourOpen, galleryOpen, teacherOpen, compareOpen]);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -80,19 +84,24 @@ export default function App(): JSX.Element {
 
         {/* HUD — 레이아웃은 여백을 넉넉히, 요소는 화면 가장자리에 여유 있게 배치 */}
         <div className="pointer-events-none absolute inset-0 z-10">
-          <div className="absolute left-5 top-5 md:left-8 md:top-7">
+          <div className="absolute left-5 top-44 sm:top-5 md:left-8 md:top-7">
             <Header />
           </div>
-          <div className="absolute right-4 top-4 md:right-7 md:top-7">
+          <div className="absolute right-4 top-4 max-w-[calc(100vw-2rem)] sm:max-w-[min(570px,calc(100vw-13rem))] md:right-7 md:top-7 lg:max-w-none">
             <TopControls
-              onTour={() => { closeQuiz(); setGalleryOpen(false); setTourOpen((v) => !v); }}
-              onGallery={() => { setTourOpen(false); setGalleryOpen((v) => !v); }}
+              onTour={() => { closeQuiz(); setGalleryOpen(false); setTeacherOpen(false); setCompareOpen(false); setTourOpen((v) => !v); }}
+              onGallery={() => { setTourOpen(false); setTeacherOpen(false); setCompareOpen(false); setGalleryOpen((v) => !v); }}
+              onTeacher={() => { closeQuiz(); setTourOpen(false); setGalleryOpen(false); setCompareOpen(false); setTeacherOpen((v) => !v); }}
+              onCompare={() => { closeQuiz(); setTourOpen(false); setGalleryOpen(false); setTeacherOpen(false); setCompareOpen((v) => !v); }}
+              onQuizToggle={() => { setTeacherOpen(false); setCompareOpen(false); setTourOpen(false); setGalleryOpen(false); if (quizOpen) closeQuiz(); else openQuiz(); }}
               tourOpen={tourOpen}
               galleryOpen={galleryOpen}
+              teacherOpen={teacherOpen}
+              compareOpen={compareOpen}
             />
           </div>
           <AnimatePresence>
-            {!quizOpen && !tourOpen && !galleryOpen && (
+            {!quizOpen && !tourOpen && !galleryOpen && !teacherOpen && !compareOpen && (
               <motion.div
                 key="nav"
                 className="absolute inset-x-3 bottom-[118px] md:inset-x-auto md:bottom-auto md:left-6 md:top-1/2 md:-translate-y-1/2"
@@ -109,11 +118,13 @@ export default function App(): JSX.Element {
             <InteractionHint />
             <TimeControl />
           </div>
-          <div className={quizOpen || tourOpen || galleryOpen ? 'max-md:hidden' : ''}>
+          <div className={quizOpen || tourOpen || galleryOpen || teacherOpen || compareOpen ? 'max-md:hidden' : ''}>
             <InfoPanel />
           </div>
           {tourOpen && <GuidedTour onClose={() => setTourOpen(false)} onQuiz={() => { setTourOpen(false); openQuiz(); }} />}
           {galleryOpen && <PhotoGallery onClose={() => setGalleryOpen(false)} />}
+          {compareOpen && <CompareLab onClose={() => setCompareOpen(false)} />}
+          <AstronomyTeacher open={teacherOpen} onClose={() => setTeacherOpen(false)} />
           <QuizModal />
           <Toast />
         </div>
