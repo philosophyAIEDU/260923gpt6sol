@@ -1,0 +1,74 @@
+[
+  {
+    "id": "q-largest",
+    "question": "태양계에서 가장 큰 행성은 무엇일까요?",
+    "options": ["토성", "목성", "해왕성", "지구"],
+    "answerIndex": 1,
+    "targetId": "jupiter",
+    "explanation": "목성의 지름은 약 14만 km로 지구의 11배가 넘어요. 다른 모든 행성을 합친 것보다도 무겁답니다."
+  },
+  {
+    "id": "q-red",
+    "question": "표면의 산화철(녹) 때문에 '붉은 행성'이라 불리는 행성은?",
+    "options": ["금성", "수성", "화성", "목성"],
+    "answerIndex": 2,
+    "targetId": "mars",
+    "explanation": "화성 표면의 먼지에는 산화철이 많아 붉게 보여요. 극지방에는 하얀 얼음 극관도 있어요."
+  },
+  {
+    "id": "q-closest",
+    "question": "태양에 가장 가까이 있는 행성은?",
+    "options": ["수성", "금성", "지구", "화성"],
+    "answerIndex": 0,
+    "targetId": "mercury",
+    "explanation": "수성은 태양에서 평균 약 5,800만 km 떨어져 있고, 88일마다 태양을 한 바퀴 돌아요."
+  },
+  {
+    "id": "q-hottest",
+    "question": "태양에서 두 번째로 가깝지만, 가장 뜨거운 행성은 어디일까요?",
+    "options": ["수성", "화성", "목성", "금성"],
+    "answerIndex": 3,
+    "targetId": "venus",
+    "explanation": "금성의 두꺼운 이산화탄소 대기가 열을 가두는 온실효과 때문에 표면 온도가 약 464°C에 달해요."
+  },
+  {
+    "id": "q-tilt",
+    "question": "자전축이 약 98° 기울어져 옆으로 누운 채 공전하는 행성은?",
+    "options": ["해왕성", "토성", "천왕성", "목성"],
+    "answerIndex": 2,
+    "targetId": "uranus",
+    "explanation": "천왕성은 아주 오래전 거대한 충돌로 자전축이 크게 기울어졌을 것으로 추정돼요."
+  },
+  {
+    "id": "q-float",
+    "question": "평균 밀도가 물보다 낮아, 거대한 욕조가 있다면 물에 뜰 수 있는 행성은?",
+    "options": ["토성", "천왕성", "목성", "해왕성"],
+    "answerIndex": 0,
+    "targetId": "saturn",
+    "explanation": "토성의 평균 밀도는 약 0.69 g/cm³로 물(1 g/cm³)보다 낮아요."
+  },
+  {
+    "id": "q-wind",
+    "question": "시속 약 2,100km의 태양계에서 가장 강한 바람이 부는 행성은?",
+    "options": ["목성", "해왕성", "금성", "지구"],
+    "answerIndex": 1,
+    "targetId": "neptune",
+    "explanation": "태양에서 가장 먼 해왕성은 의외로 태양계에서 가장 거센 바람이 부는 곳이에요."
+  },
+  {
+    "id": "q-moon",
+    "question": "지구에서 항상 같은 면만 보이는 천체는 무엇일까요?",
+    "options": ["화성", "금성", "달", "태양"],
+    "answerIndex": 2,
+    "targetId": "moon",
+    "explanation": "달은 자전 주기와 공전 주기가 약 27.3일로 같아서(조석 고정) 늘 같은 면이 지구를 향해요."
+  },
+  {
+    "id": "q-mass",
+    "question": "태양이 태양계 전체 질량에서 차지하는 비율은 약 얼마일까요?",
+    "options": ["약 50%", "약 75%", "약 90%", "약 99.8%"],
+    "answerIndex": 3,
+    "targetId": "sun",
+    "explanation": "태양은 태양계 질량의 약 99.86%를 차지해요. 나머지 행성, 위성, 소행성을 모두 합쳐도 0.14%뿐이에요."
+  }
+]

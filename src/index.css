@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --glass-bg: rgba(15, 15, 35, 0.6);
+    --glass-bg-strong: rgba(15, 15, 35, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent-cyan: #4dd8ff;
+    --accent-violet: #7c5cff;
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    /* 순수 검정 대신 딥 스페이스 그라데이션 + 은은한 성운 radial gradient */
+    background:
+      radial-gradient(1200px 700px at 78% 18%, rgba(124, 92, 255, 0.1), transparent 60%),
+      radial-gradient(900px 600px at 12% 88%, rgba(77, 216, 255, 0.06), transparent 60%),
+      linear-gradient(180deg, #050510 0%, #0a0a1f 100%);
+  }
+
+  body {
+    @apply font-body text-ink-primary antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+
+  canvas {
+    touch-action: none;
+    outline: none;
+  }
+
+  ::selection {
+    background: rgba(77, 216, 255, 0.3);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(77, 216, 255, 0.7);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* 글래스모피즘 패널 — 반투명 + 20px blur + 1px 미세 보더 + 상단 하이라이트 */
+  .glass {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid var(--glass-border);
+    box-shadow:
+      0 24px 60px -24px rgba(0, 0, 0, 0.65),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-strong {
+    @apply glass;
+    background: var(--glass-bg-strong);
+  }
+
+  /* 숫자 정렬이 흔들리지 않도록 고정폭 숫자 */
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+
+  .eyebrow {
+    @apply font-display text-[10px] font-medium uppercase tracking-widest2 text-ink-muted;
+  }
+
+  .icon-btn {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-full text-ink-secondary transition-all duration-220 ease-out-quint;
+  }
+  .icon-btn:hover {
+    @apply bg-white/[0.06] text-ink-primary;
+  }
+  .icon-btn[aria-pressed='true'] {
+    @apply bg-accent-cyan/10 text-accent-cyan;
+  }
+
+  .hairline {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    height: 1px;
+  }
+
+  .text-gradient {
+    background: linear-gradient(92deg, #e6e9f5 0%, #a9e9ff 45%, #b9a8ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .pb-safe {
+    padding-bottom: max(1rem, var(--safe-bottom));
+  }
+}
+
+.body-label-wrapper {
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
